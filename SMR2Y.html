@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Meine Seite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .list-block {
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 500px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Checkliste SMR2</h1>
+
+    <div class="container">
+
+        <!-- Linke Liste -->
+        <div class="list-block">
+            <h2>Checks before work approval</h2>
+
+            <label><input type="checkbox" class="left"> Coord. with TWR</label><br><br>
+            <label><input type="checkbox" class="left"> Inform APRON</label><br><br>
+            <label><input type="checkbox" class="left"> GO/NO GO Decision Given to ATSEP</label><br><br>
+            <label><input type="checkbox" class="left"> Remove SMR2 from SAMAX via TECAMS by suspend</label><br><br>
+
+            <br>
+            <button onclick="clearLeft()">Clear all</button>
+        </div>
+
+        <!-- Rechte Liste -->
+        <div class="list-block">
+            <h2>Checks after Work done</h2>
+
+            <label><input type="checkbox" class="right"> Unsuspend SMR2 on SAMAX via TECAMS</label><br><br>
+            <label><input type="checkbox" class="right"> Inform TWR SPVR</label><br><br>
+            <label><input type="checkbox" class="right"> Inform APRON</label><br><br>
+            <label><input type="checkbox" class="right"> Call ATSEP to go Home</label><br><br>
+
+            <br>
+            <button onclick="clearRight()">Clear all</button>
+        </div>
+
+    </div>
+
+    <script>
+        function clearLeft() {
+            document.querySelectorAll('.left').forEach(cb => cb.checked = false);
+        }
+
+        function clearRight() {
+            document.querySelectorAll('.right').forEach(cb => cb.checked = false);
+        }
+    </script>
+
+</body>
+</html>

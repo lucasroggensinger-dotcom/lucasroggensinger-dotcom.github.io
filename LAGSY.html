@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>LAGSY Checkliste</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .list-block {
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 500px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Checkliste LAGSY</h1>
+
+    <div class="container">
+
+        <!-- Linke Liste -->
+        <div class="list-block">
+            <h2>Checks before work approval</h2>
+
+            <label><input type="checkbox" class="left"> Coord. with ANSE (if possible 2hrs in advance -> for ARFA)</label><br><br>
+            <label><input type="checkbox" class="left"> Coord. with SPVR-ACC</label><br><br>
+            <label><input type="checkbox" class="left"> Coord. with SPVR-TWR ZRH</label><br><br>
+            <label><input type="checkbox" class="left"> Inform SMC-West</label><br><br>
+            <label><input type="checkbox" class="left"> Inform ARFA (ARFA will inform SGA)</label><br><br>
+            <label><input type="checkbox" class="left"> Inform KdoCy AGEO</label><br><br>
+            <label><input type="checkbox" class="left"> Inform LSZB ADC</label><br><br>
+            <label><input type="checkbox" class="left"> Inform LSZG ADC</label><br><br>
+            <label><input type="checkbox" class="left"> Inform EMM SPVR</label><br><br>
+            <label><input type="checkbox" class="left"> Inform DUB SPVR</label><br><br>
+            <label><input type="checkbox" class="left"> Inform LSZC (BUO) TWR</label><br><br>
+            <label><input type="checkbox" class="left"> Inform DFS (E Langen Überwachung)</label><br><br>
+            <label><input type="checkbox" class="left"> Disconnect LAG from RDP via ISUP</label><br><br>
+            <label><input type="checkbox" class="left"> Disconnect LAG from MRTS via ISUP</label><br><br>
+            <label><input type="checkbox" class="left"> GO/NO GO Decision Given to ATSEP</label><br><br>
+
+            <br>
+            <button onclick="clearLeft()">Clear all</button>
+        </div>
+
+        <!-- Rechte Liste -->
+        <div class="list-block">
+            <h2>Checks after Work done</h2>
+
+            <label><input type="checkbox" class="right"> Inform ANSE</label><br><br>
+            <label><input type="checkbox" class="right"> Inform SPVR-ACC</label><br><br>
+            <label><input type="checkbox" class="right"> Inform SPVR-TWR ZRH</label><br><br>
+            <label><input type="checkbox" class="right"> Inform SMC-West</label><br><br>
+            <label><input type="checkbox" class="right"> Inform ARFA (ARFA will inform SGA)</label><br><br>
+            <label><input type="checkbox" class="right"> Inform KdoCy AGEO</label><br><br>
+            <label><input type="checkbox" class="right"> Inform LSZB ADC</label><br><br>
+            <label><input type="checkbox" class="right"> Inform LSZG ADC</label><br><br>
+            <label><input type="checkbox" class="right"> Inform EMM SPVR</label><br><br>
+            <label><input type="checkbox" class="right"> Inform DUB SPVR</label><br><br>
+            <label><input type="checkbox" class="right"> Inform LSZC (BUO) TWR</label><br><br>
+            <label><input type="checkbox" class="right"> Inform DFS (E Langen Überwachung)</label><br><br>
+            <label><input type="checkbox" class="right"> Connect LAG to RDP via ISUP</label><br><br>
+            <label><input type="checkbox" class="right"> Connect LAG to MRTS via ISUP</label><br><br>
+            <label><input type="checkbox" class="rights"> If all ok infrom ATSEP</label><br><br>
+
+            <br>
+            <button onclick="clearRight()">Clear all</button>
+        </div>
+		<!-- Textfeld -->
+		<div class="list-block">
+			<h2>Comments</h2>
+
+			<textarea name="comments" rows="30" cols="50" placeholder="Enter your comments here..."></textarea>
+		</div>
+
+
+    </div>
+
+    <script>
+        function clearLeft() {
+            document.querySelectorAll('.left').forEach(cb => cb.checked = false);
+        }
+
+        function clearRight() {
+            document.querySelectorAll('.right').forEach(cb => cb.checked = false);
+        }
+    </script>
+
+</body>
+</html>
